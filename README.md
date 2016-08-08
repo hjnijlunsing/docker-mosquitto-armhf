@@ -94,6 +94,6 @@ docker-mosquitto-armhf was written by:
  * [David Medinets](https://github.com/medined)
  * [Gavin de Kock](https://github.com/gavindekock)
  * [Raphael Ahrens](https://github.com/tantSinnister)
- * [Harm Jan Nijlunsing](https://github.com/tantSinnister)
+ * [Harm Jan Nijlunsing](https://github.com/nijlunsing)
 
 License: [BSD 3-Clause](https://tldrlegal.com/license/bsd-3-clause-license-%28revised%29)
