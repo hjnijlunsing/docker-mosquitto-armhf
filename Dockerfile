@@ -1,6 +1,6 @@
-FROM debian:jessie
+FROM resin/rpi-raspbian:jessie
 
-MAINTAINER Thomas Kerpe <toke@toke.de>
+MAINTAINER Harm Jan Nijlunsing <git@harmjan.dds.nl>
 
 
 RUN apt-get update && apt-get install -y wget && \

@@ -4,14 +4,14 @@ docker-mosquitto
 Docker image for mosquitto
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/chadoe/docker-cleanup-volumes/master/LICENSE)
-[![Docker Stars](https://img.shields.io/docker/stars/toke/mosquitto.svg)](https://hub.docker.com/r/toke/mosquitto/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/toke/mosquitto.svg)](https://hub.docker.com/r/toke/mosquitto/)
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/toke/mosquitto/latest.svg)](https://hub.docker.com/r/toke/mosquitto/)
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/toke/mosquitto/latest.svg)](https://hub.docker.com/r/toke/mosquitto/)
+[![Docker Stars](https://img.shields.io/docker/stars/nijlunsing/mosquitto-armhf.svg)](https://hub.docker.com/r/nijlunsing/mosquitto-armhf/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/nijlunsing/mosquitto-armhf.svg)](https://hub.docker.com/r/nijlunsing/mosquitto-armhf/)
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/nijlunsing/mosquitto-armhf/latest.svg)](https://hub.docker.com/r/nijlunsing/mosquitto-armhf/)
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/nijlunsing/mosquitto-armhf/latest.svg)](https://hub.docker.com/r/nijlunsing/mosquitto-armhf/)
 
 ## Run
 
-    docker run -ti -p 1883:1883 -p 9001:9001 toke/mosquitto
+    docker run -ti -p 1883:1883 -p 9001:9001 nijlunsing/mosquitto-armhf
 
 Exposes Port 1883 (MQTT) 9001 (Websocket MQTT)
 
@@ -39,7 +39,7 @@ persistent and change the configuration.
     -v /srv/mqtt/config:/mqtt/config:ro \
     -v /srv/mqtt/log:/mqtt/log \
     -v /srv/mqtt/data/:/mqtt/data/ \
-    --name mqtt toke/mosquitto
+    --name mqtt nijlunsing/mosquitto-armhf
 
 Volumes: /mqtt/config, /mqtt/data and /mqtt/log
 
@@ -69,7 +69,7 @@ The example uses a docker volume named `mosquitto_data` (see above).
     [Service]
     Environment=EXT_IP=123.123.123.123
     Restart=always
-    ExecStart=/usr/bin/docker run -v /srv/mqtt/config:/mqtt/config -v /srv/mqtt/log:/mqtt/log -v mqtt-persistence:/mqtt/data/ -p ${EXT_IP}:1883:1883 -p ${EXT_IP}:8883:8883 -p 127.0.0.1:9001:9001 --name mqtt toke/mosquitto
+    ExecStart=/usr/bin/docker run -v /srv/mqtt/config:/mqtt/config -v /srv/mqtt/log:/mqtt/log -v mqtt-persistence:/mqtt/data/ -p ${EXT_IP}:1883:1883 -p ${EXT_IP}:8883:8883 -p 127.0.0.1:9001:9001 --name mqtt nijlunsing/mosquitto-armhf
     ExecStop=/usr/bin/docker stop -t 2 mqtt
     ExecStopPost=/usr/bin/docker rm -f mqtt
 
@@ -85,7 +85,7 @@ The example uses a docker volume named `mosquitto_data` (see above).
 
 ## Authors and license
 
-docker-mosquitto was written by:
+docker-mosquitto-armhf was written by:
 
 * **Thomas Kerpe** | [web](https://toke.de/) | [mail](mailto:web@toke.de) | [GitHub](https://github.com/toke/)
 * With contributions from:
@@ -94,5 +94,6 @@ docker-mosquitto was written by:
  * [David Medinets](https://github.com/medined)
  * [Gavin de Kock](https://github.com/gavindekock)
  * [Raphael Ahrens](https://github.com/tantSinnister)
+ * [Harm Jan Nijlunsing](https://github.com/tantSinnister)
 
 License: [BSD 3-Clause](https://tldrlegal.com/license/bsd-3-clause-license-%28revised%29)
